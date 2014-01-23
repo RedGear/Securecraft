@@ -3,25 +3,25 @@
 <properties version="1.0">
 	<comment>Italina (Italy) (it_IT) Localization File for Securecraft</comment>
         
-	<entry key="tile.redgear.securecraft.renforcedobsidian.name">Rinforzato Obsidian</entry>
-	<entry key="tile.redgear.securecraft.smartobsidian.name">Intelligente Obsidian</entry>
-	<entry key="tile.redgear.securecraft.obsidianppblock.name">Obsidian Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.diamondppblock.name">Diamante Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.renforcedobsidianppblock.name">Rinforzato Obsidian Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.smartobsidianppblock.name">Intelligente Spingidisco Obsidian</entry>
-	<entry key="tile.redgear.securecraft.mossyppblock.name">Muschioso Piastra Ciottoli Di Pressione</entry>
-	<entry key="tile.redgear.securecraft.brickppblock.name">Mattone Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.emeraldppblock.name">Smeraldo Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.renforcedemeraldppblock.name">Rinforzato Smeraldo Spingidisco</entry>
-	<entry key="tile.redgear.securecraft.diamonddoorblock.name">Diamante Porta</entry>
-	<entry key="tile.redgear.securecraft.obsidiandoorblock.name">Obsidian Porta</entry>
-	<entry key="tile.redgear.securecraft.renforcedobsidiandoorblock.name">Rinforzato Obsidian Porta</entry>
-	<entry key="tile.redgear.securecraft.smartobsidiandoorblock.name">Intelligente Porta</entry>
+	<entry key="tile.RenforcedObsidian.name">Rinforzato Obsidian</entry>
+	<entry key="tile.SmartObsidian.name">Intelligente Obsidian</entry>
+	<entry key="tile.ObsidianPP.name">Obsidian Spingidisco</entry>
+	<entry key="tile.DiamondPP.name">Diamante Spingidisco</entry>
+	<entry key="tile.RenforcedObsidianPP.name">Rinforzato Obsidian Spingidisco</entry>
+	<entry key="tile.SmartObsidianPP.name">Intelligente Spingidisco Obsidian</entry>
+	<entry key="tile.MossyPP.name">Muschioso Piastra Ciottoli Di Pressione</entry>
+	<entry key="tile.BrickPP.name">Mattone Spingidisco</entry>
+	<entry key="tile.EmeraldPP.name">Smeraldo Spingidisco</entry>
+	<entry key="tile.RenforcedEmeraldPP.name">Rinforzato Smeraldo Spingidisco</entry>
+	<entry key="tile.DiamondDoor.name">Diamante Porta</entry>
+	<entry key="tile.ObsidianDoor.name">Obsidian Porta</entry>
+	<entry key="tile.RenforcedObsidianDoor.name">Rinforzato Obsidian Porta</entry>
+	<entry key="tile.SmartObsidianDoor.name">Intelligente Porta</entry>
 	
-	<entry key="item.redgear.securecraft.chiseltool.name">Obsidian Scalpello</entry>
-	<entry key="item.redgear.securecraft.diamonddoor.name">Diamante Porta</entry>
-	<entry key="item.redgear.securecraft.obsidiandoor.name">Obsidian Porta</entry>
-	<entry key="item.redgear.securecraft.renforcedobsidiandoor.name">Rinforzato Obsidian Porta</entry>
-	<entry key="item.redgear.securecraft.smartobsidiandoor.name">Intelligente Porta</entry>
+	<entry key="item.ObsidianChisel.name">Obsidian Scalpello</entry>
+	<entry key="item.AddedDoorItem.DiamondDoorItem.name">Diamante Porta</entry>
+	<entry key="item.AddedDoorItem.ObsidianDoorItem.name">Obsidian Porta</entry>
+	<entry key="item.AddedDoorItem.RenforcedObsidianDoorItem.name">Rinforzato Obsidian Porta</entry>
+	<entry key="item.AddedDoorItem.SmartObsidianDoorItem.name">Intelligente Porta</entry>
 	
 </properties>
