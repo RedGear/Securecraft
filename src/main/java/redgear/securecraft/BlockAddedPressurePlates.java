@@ -4,84 +4,73 @@ import java.util.Iterator;
 import java.util.List;
 
 import net.minecraft.block.BlockPressurePlate;
-import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import redgear.core.tile.TileEntitySmart;
 
-public class BlockAddedPressurePlates extends BlockPressurePlate
-{
-    protected Class acceptableEntityClass;
-    private boolean isSmart;
-    private boolean isAnti;
+public class BlockAddedPressurePlates extends BlockPressurePlate {
+	protected Class acceptableEntityClass;
+	private final boolean isSmart;
+	private final boolean isAnti;
 
-    public BlockAddedPressurePlates(int par1, String par2Str, Material par3Material, Class creatureClass, boolean isSmart, boolean isAnti)
-    {
-        super(par1, par2Str, par3Material, EnumMobType.mobs);
-        acceptableEntityClass = creatureClass;
-        this.isSmart = isSmart;
-        this.isAnti = isAnti;
-    }
-    
-    public BlockAddedPressurePlates(int par1, String par2Str, Material par3Material, Class creatureClass, boolean isSmart){
-    	this(par1, par2Str, par3Material, creatureClass, false, false);
-    }
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass, boolean isSmart,
+			boolean isAnti) {
+		super(par2Str, par3Material,  Sensitivity.mobs);
+		acceptableEntityClass = creatureClass;
+		this.isSmart = isSmart;
+		this.isAnti = isAnti;
+	}
 
-    public BlockAddedPressurePlates(int par1, String par2Str, Material par3Material, Class creatureClass)
-    {
-        this(par1, par2Str, par3Material, creatureClass, false);
-    }
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass, boolean isSmart) {
+		this(par2Str, par3Material, creatureClass, false, false);
+	}
 
-    protected String getOwner(World world, int x, int y, int z)
-    {
-        try
-        {
-            TileEntitySmart myTile = ((TileEntitySmart) world.getBlockTileEntity(x, y, z));
-            return myTile.ownerName;
-        }
-        catch (Exception e)  //is something goes wrong, just return an empty string
-        {
-            return "";
-        }
-    }
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass) {
+		this(par2Str, par3Material, creatureClass, false);
+	}
 
-    /**
-     * Returns the current state of the pressure plate. Returns a value between 0 and 15 based on the number of items on
-     * it.
-     */
-    protected int getPlateState(World world, int x, int y, int z)
-    {
-        List list = null;
-        list = world.getEntitiesWithinAABB(EntityLivingBase.class, this.getSensitiveAABB(x, y, z));
+	protected String getOwner(World world, int x, int y, int z) {
+		try {
+			TileEntitySmart myTile = (TileEntitySmart) world.getTileEntity(x, y, z);
+			return myTile.ownerName;
+		} catch (Exception e)  //is something goes wrong, just return an empty string
+		{
+			return "";
+		}
+	}
 
-        if (!list.isEmpty())
-        {
-            Iterator iterator = list.iterator();
+	/**
+	 * Returns the current state of the pressure plate. Returns a value between
+	 * 0 and 15 based on the number of items on
+	 * it.
+	 */
+	protected int getPlateState(World world, int x, int y, int z) {
+		List list = null;
+		list = world.getEntitiesWithinAABB(EntityLivingBase.class, this.getCollisionBoundingBoxFromPool(world, x, y, z));
 
-            while (iterator.hasNext())
-            {
-            	EntityLivingBase entity = (EntityLivingBase)iterator.next();
-                
+		if (!list.isEmpty()) {
+			Iterator iterator = list.iterator();
 
-                if (!entity.doesEntityNotTriggerPressurePlate() && acceptableEntityClass.isAssignableFrom(entity.getClass())){
-                	if(isSmart){ 
-                		if(EntityPlayer.class.isAssignableFrom(entity.getClass())){
-                			boolean test = ((EntityPlayer)entity).username.equals(getOwner(world, x, y, z));
-                			if(isAnti ? !test : test)
-                				return 15;
-                		}
-                		else
-                			if(isAnti)
-                				return 15;
-                	}
-                	else
-                		return 15;
-                }
-            }
-        }
+			while (iterator.hasNext()) {
+				EntityLivingBase entity = (EntityLivingBase) iterator.next();
 
-        return 0;
-    }
+				if (!entity.doesEntityNotTriggerPressurePlate()
+						&& acceptableEntityClass.isAssignableFrom(entity.getClass()))
+					if (isSmart) {
+						if (EntityPlayer.class.isAssignableFrom(entity.getClass())) {
+							boolean test = ((EntityPlayer) entity).getDisplayName().equals(getOwner(world, x, y, z));
+							if (isAnti ? !test : test)
+								return 15;
+						} else if (isAnti)
+							return 15;
+					} else
+						return 15;
+			}
+		}
+
+		return 0;
+	}
 }
