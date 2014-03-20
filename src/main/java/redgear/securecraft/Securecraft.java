@@ -56,7 +56,7 @@ public class Securecraft extends ModUtils {
 				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("RenforcedObsidian");
 		SmartObsidian = new BlockSmartObsidian(getBlockId("SmartObsidian"), Material.rock).setBlockUnbreakable()
 				.setStepSound(Block.soundStoneFootstep).setCreativeTab(CreativeTabs.tabDecorations)
-				.setUnlocalizedName("SmartObsidian");
+				.setUnlocalizedName("SmartObsidian").setResistance(6000000.0F);
 		ObsidianPPBlock = new BlockAddedPressurePlates(getBlockId("ObsidianPP"), "obsidian", Material.rock,
 				EntityPlayer.class).setHardness(50).setCreativeTab(CreativeTabs.tabDecorations)
 				.setUnlocalizedName("ObsidianPP");
@@ -68,7 +68,7 @@ public class Securecraft extends ModUtils {
 				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("RenforcedObsidianPP");
 		SmartObsidianPPBLock = new BlockSmartPressurePlates(getBlockId("SmartObsidianPP"),
 				"redgear_securecraft:smartObsidian", Material.rock, EntityPlayer.class).setBlockUnbreakable()
-				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("SmartObsidianPP");
+				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("SmartObsidianPP").setResistance(6000000.0F);
 		MossyPPBlock = new BlockAddedPressurePlates(getBlockId("MossyPP"), "cobblestone_mossy", Material.rock,
 				IMob.class).setHardness(2.0F).setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("MossyPP");
 		BrickPPBlock = new BlockAddedPressurePlates(getBlockId("BrickPP"), "brick", Material.rock, EntityAnimal.class)
@@ -80,13 +80,13 @@ public class Securecraft extends ModUtils {
 		RenforcedObsidianDoorBlock = new BlockAddedDoors(getBlockId("RenforcedObsidianDoor"), Material.rock, 2)
 				.setHardness(100).setUnlocalizedName("RenforcedObsidianDoor");
 		SmartObsidianDoorBlock = new BlockSmartDoors(getBlockId("SmartDoor"), Material.rock, 3).setBlockUnbreakable()
-				.setUnlocalizedName("SmartObsidianDoor");
+				.setUnlocalizedName("SmartObsidianDoor").setResistance(6000000.0F);
 		EmeraldPPBlock = new BlockSmartPressurePlates(getBlockId("EmeraldPP"), "emerald_block", Material.rock,
 				EntityLiving.class, true).setHardness(5).setCreativeTab(CreativeTabs.tabDecorations)
 				.setUnlocalizedName("EmeraldPP");
 		RenforcedEmeraldPPBlock = new BlockSmartPressurePlates(getBlockId("RenforcedEmeraldPP"),
 				"redgear_securecraft:smartObsidianAnti", Material.rock, EntityLiving.class, true).setBlockUnbreakable()
-				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("RenforcedEmeraldPP");
+				.setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName("RenforcedEmeraldPP").setResistance(6000000.0F);
 		ChiselTool = new ItemToolChisel(getItemId("ObsidianChisel")).setCreativeTab(CreativeTabs.tabTools)
 				.setUnlocalizedName("ObsidianChisel");
 		AddedDoorItem = new ItemAddedDoor(getItemId("DoorItem")).setCreativeTab(CreativeTabs.tabDecorations)
