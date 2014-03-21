@@ -1,0 +1,20 @@
+tile.RenforcedObsidian.name=Rinforzato Obsidian
+tile.SmartObsidian.name=Intelligente Obsidian
+tile.ObsidianPP.name=Obsidian Spingidisco
+tile.DiamondPP.name=Diamante Spingidisco
+tile.RenforcedObsidianPP.name=Rinforzato Obsidian Spingidisco
+tile.SmartObsidianPP.name=Intelligente Spingidisco Obsidian
+tile.MossyPP.name=Muschioso Piastra Ciottoli Di Pressione
+tile.BrickPP.name=Mattone Spingidisco
+tile.EmeraldPP.name=Smeraldo Spingidisco
+tile.RenforcedEmeraldPP.name=Rinforzato Smeraldo Spingidisco
+tile.DiamondDoor.name=Diamante Porta
+tile.ObsidianDoor.name=Obsidian Porta
+tile.RenforcedObsidianDoor.name=Rinforzato Obsidian Porta
+tile.SmartObsidianDoor.name=Intelligente Porta
+	
+item.ObsidianChisel.name=Obsidian Scalpello
+item.AddedDoorItem.DiamondDoorItem.name=Diamante Porta
+item.AddedDoorItem.ObsidianDoorItem.name=Obsidian Porta
+item.AddedDoorItem.RenforcedObsidianDoorItem.name=Rinforzato Obsidian Porta
+item.AddedDoorItem.SmartObsidianDoorItem.name=Intelligente Porta
