@@ -66,7 +66,7 @@ public class ItemAddedDoor extends ItemDoor {
 				break;
 
 			case 2:
-				block = Securecraft.RenforcedObsidianDoorBlock;
+				block = Securecraft.ReinforcedObsidianDoorBlock;
 				break;
 
 			case 3:
@@ -107,9 +107,10 @@ public class ItemAddedDoor extends ItemDoor {
 		return getUnlocalizedName() + "." + subNames[itemstack.getItemDamage()];
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void getSubItems(Item par1, CreativeTabs tab, List subItems) {
+	public void getSubItems(Item par1, CreativeTabs tab, @SuppressWarnings("rawtypes") List subItems) {
 		for (int ix = 0; ix < 4; ix++)
 			subItems.add(new ItemStack(par1, 1, ix));
 	}

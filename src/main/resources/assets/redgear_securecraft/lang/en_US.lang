@@ -1,17 +1,23 @@
-tile.RenforcedObsidian.name=Reinforced Obsidian
+itemGroup.securecraft=Securecraft
+
+tile.ReinforcedObsidian.name=Reinforced Obsidian
 tile.SmartObsidian.name=Smart Obsidian
 tile.ObsidianPP.name=Obsidian Pressure Plate
 tile.DiamondPP.name=Diamond Pressure Plate
-tile.RenforcedObsidianPP.name=Reinforced Obsidian Pressure Plate
+tile.ReinforcedObsidianPP.name=Reinforced Obsidian Pressure Plate
 tile.SmartObsidianPP.name=Smart Obsidian Pressure Plate
 tile.MossyPP.name=Mossycobble Pressure Plate
 tile.BrickPP.name=Brick Pressure Plate
 tile.EmeraldPP.name=Emerald Pressure Plate
-tile.RenforcedEmeraldPP.name=Reinforced Emerald Pressure Plate
+tile.ReinforcedEmeraldPP.name=Reinforced Emerald Pressure Plate
 tile.DiamondDoor.name=Diamond Door
 tile.ObsidianDoor.name=Obsidian Door
-tile.RenforcedObsidianDoor.name=Reinforced Obsidian Door
+tile.ReinforcedObsidianDoor.name=Reinforced Obsidian Door
 tile.SmartObsidianDoor.name=Smart Door
+
+tile.ReinforcedGlass.name=Reinforced Glass
+tile.ReinforcedObsidianGlass.name=Reinforced Obsidian Glass
+tile.SmartGlass.name=Smart Glass
 	
 item.ObsidianChisel.name=Obsidian Chisel
 item.AddedDoorItem.DiamondDoorItem.name=Diamond Door

@@ -1,20 +1,20 @@
-tile.RenforcedObsidian.name=Renforcé Obsidian
+tile.ReinforcedObsidian.name=Renforcé Obsidian
 tile.SmartObsidian.name=Obsidian Intelligent
 tile.ObsidianPP.name=Plaque De Pression Obsidian
 tile.DiamondPP.name=Plaque De Pression De diamant
-tile.RenforcedObsidianPP.name=Plaque De Pression Obsidian Renforcé
+tile.ReinforcedObsidianPP.name=Plaque De Pression Obsidian Renforcé
 tile.SmartObsidianPP.name=Intelligent Plateau De Pression Obsidian
 tile.MossyPP.name=Plateau De Pression Pavé Moussu
 tile.BrickPP.name=Brique Plateau De Pression
 tile.EmeraldPP.name=Emeraude Plaque De Pression
-tile.RenforcedEmeraldPP.name=Renforcé Emeraude Plaque De Pression
+tile.ReinforcedEmeraldPP.name=Renforcé Emeraude Plaque De Pression
 tile.DiamondDoor.name=Diamant Porte
 tile.ObsidianDoor.name=Obsidian Porte
-tile.RenforcedObsidianDoor.name=Renforcé Obsidian Porte
+tile.ReinforcedObsidianDoor.name=Renforcé Obsidian Porte
 tile.SmartObsidianDoor.name=Porte Intelligente
 	
 item.ObsidianChisel.name=Obsidian Ciseau
 item.AddedDoorItem.DiamondDoorItem.name=Diamant Porte
 item.AddedDoorItem.ObsidianDoorItem.name=Obsidian Porte
-item.AddedDoorItem.RenforcedObsidianDoorItem.name=Renforcé Obsidian Porte
+item.AddedDoorItem.ReinforcedObsidianDoorItem.name=Renforcé Obsidian Porte
 item.AddedDoorItem.SmartObsidianDoorItem.name=Porte Intelligente

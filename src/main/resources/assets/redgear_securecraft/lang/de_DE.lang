@@ -1,20 +1,20 @@
-tile.RenforcedObsidian.name=Verstärkte Obsidian
+tile.ReinforcedObsidian.name=Verstärkte Obsidian
 tile.SmartObsidian.name=Intelligente-Obsidian
 tile.ObsidianPP.name=Obsidian Druckplatte
 tile.DiamondPP.name=Diamant-Druckplatte
-tile.RenforcedObsidianPP.name=Verstärkte Obsidian Druckplatte
+tile.ReinforcedObsidianPP.name=Verstärkte Obsidian Druckplatte
 tile.SmartObsidianPP.name=Intelligente-Obsidian Druckplatte
 tile.MossyPP.name=Moosbedeckte Kopfsteindruckplatte
 tile.BrickPP.name=Ziegel Druckplatte
 tile.EmeraldPP.name=Smaragd Druckplatte
-tile.RenforcedEmeraldPP.name=Verstärkte Smaragd Druckplatte
+tile.ReinforcedEmeraldPP.name=Verstärkte Smaragd Druckplatte
 tile.DiamondDoor.name=Diamant-Tür
 tile.ObsidianDoor.name=Obsidian Tür
-tile.RenforcedObsidianDoor.name=Verstärkte Obsidian Tür
+tile.ReinforcedObsidianDoor.name=Verstärkte Obsidian Tür
 tile.SmartObsidianDoor.name=Intelligente Tür
 	
 item.ObsidianChisel.name=Obsidian Meißel
 item.AddedDoorItem.DiamondDoorItem.name=Diamant-Tür
 item.AddedDoorItem.ObsidianDoorItem.name=Obsidian Tür
-item.AddedDoorItem.RenforcedObsidianDoorItem.name=Verstärkte Obsidian Tür
+item.AddedDoorItem.ReinforcedObsidianDoorItem.name=Verstärkte Obsidian Tür
 item.AddedDoorItem.SmartObsidianDoorItem.name=Intelligente Tür

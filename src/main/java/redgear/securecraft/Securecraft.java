@@ -28,86 +28,108 @@ public class Securecraft extends ModUtils {
 	@Instance("redgear_securecraft")
 	public static ModUtils inst;
 
-	public static Block RenforcedObsidian;
+	public static Block ReinforcedObsidian;
 	public static Block SmartObsidian;
 
 	public static Block ObsidianPPBlock;
 	public static Block DiamondPPBlock;
-	public static Block RenforcedObsidianPPBlock;
+	public static Block ReinforcedObsidianPPBlock;
 	public static Block SmartObsidianPPBLock;
 	public static Block MossyPPBlock;
 	public static Block BrickPPBlock;
 	public static Block EmeraldPPBlock;
-	public static Block RenforcedEmeraldPPBlock;
+	public static Block ReinforcedEmeraldPPBlock;
 
 	public static Block DiamondDoorBlock;
 	public static Block ObsidianDoorBlock;
-	public static Block RenforcedObsidianDoorBlock;
+	public static Block ReinforcedObsidianDoorBlock;
 	public static Block SmartObsidianDoorBlock;
 
+	public static Block ReinforcedGlass;
+	public static Block ReinforcedObsidianGlass;
+	public static Block SmartGlass;
+	
 	public static Item ChiselTool;
 	public static Item AddedDoorItem;
+	
+	public static CreativeTabs tab = new CreativeTabs("securecraft"){
+
+		@Override
+		public Item getTabIconItem() {
+			return Item.getItemFromBlock(ReinforcedObsidian);
+		}
+		
+	};
 
 	@Override
 	protected void PreInit(FMLPreInitializationEvent event) {
-		RenforcedObsidian = new BlockGeneric(Material.rock, "renforcedObsidian").setHardness(100)
-				.setResistance(2000.0F).setStepSound(Block.soundTypeStone).setCreativeTab(CreativeTabs.tabDecorations)
-				.setBlockName("RenforcedObsidian");
-		SmartObsidian = new BlockSmartObsidian(Material.rock).setBlockUnbreakable().setStepSound(Block.soundTypeStone)
-				.setCreativeTab(CreativeTabs.tabDecorations).setBlockName("SmartObsidian");
+		ReinforcedObsidian = new BlockGeneric(Material.rock, "reinforcedObsidian").setHardness(100)
+				.setResistance(4000.0F).setStepSound(Block.soundTypeStone).setCreativeTab(tab)
+				.setBlockName("ReinforcedObsidian");
+		SmartObsidian = new BlockSmartObsidian(Material.rock, "smartObsidian").setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundTypeStone)
+				.setCreativeTab(tab).setBlockName("SmartObsidian");
 		ObsidianPPBlock = new BlockAddedPressurePlates("obsidian", Material.rock, EntityPlayer.class).setHardness(50)
-				.setCreativeTab(CreativeTabs.tabDecorations).setBlockName("ObsidianPP");
+				.setCreativeTab(tab).setBlockName("ObsidianPP");
 		DiamondPPBlock = new BlockSmartPressurePlates("diamond_block", Material.rock, EntityPlayer.class)
-				.setHardness(5).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("DiamondPP");
-		RenforcedObsidianPPBlock = new BlockAddedPressurePlates("redgear_securecraft:renforcedObsidian", Material.rock,
-				EntityPlayer.class).setHardness(100).setCreativeTab(CreativeTabs.tabDecorations)
-				.setBlockName("RenforcedObsidianPP");
+				.setHardness(5).setCreativeTab(tab).setBlockName("DiamondPP");
+		ReinforcedObsidianPPBlock = new BlockAddedPressurePlates("redgear_securecraft:reinforcedObsidian", Material.rock,
+				EntityPlayer.class).setHardness(100).setResistance(4000.0F).setCreativeTab(tab)
+				.setBlockName("ReinforcedObsidianPP");
 		SmartObsidianPPBLock = new BlockSmartPressurePlates("redgear_securecraft:smartObsidian", Material.rock,
-				EntityPlayer.class).setBlockUnbreakable().setCreativeTab(CreativeTabs.tabDecorations)
+				EntityPlayer.class).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(tab)
 				.setBlockName("SmartObsidianPP");
 		MossyPPBlock = new BlockAddedPressurePlates("cobblestone_mossy", Material.rock, IMob.class).setHardness(2.0F)
-				.setCreativeTab(CreativeTabs.tabDecorations).setBlockName("MossyPP");
+				.setCreativeTab(tab).setBlockName("MossyPP");
 		BrickPPBlock = new BlockAddedPressurePlates("brick", Material.rock, EntityAnimal.class).setHardness(2.0F)
-				.setCreativeTab(CreativeTabs.tabDecorations).setBlockName("BrickPP");
+				.setCreativeTab(tab).setBlockName("BrickPP");
 		DiamondDoorBlock = new BlockSmartDoors(Material.rock, 0).setHardness(5).setBlockName("DiamondDoor");
-		ObsidianDoorBlock = new BlockAddedDoors(Material.rock, 1).setHardness(50).setBlockName("ObsidianDoor");
-		RenforcedObsidianDoorBlock = new BlockAddedDoors(Material.rock, 2).setHardness(100).setBlockName(
-				"RenforcedObsidianDoor");
-		SmartObsidianDoorBlock = new BlockSmartDoors(Material.rock, 3).setBlockUnbreakable().setBlockName(
+		ObsidianDoorBlock = new BlockAddedDoors(Material.rock, 1).setHardness(50).setResistance(2000.0F).setBlockName("ObsidianDoor");
+		ReinforcedObsidianDoorBlock = new BlockAddedDoors(Material.rock, 2).setHardness(100).setResistance(4000.0F).setBlockName(
+				"ReinforcedObsidianDoor");
+		SmartObsidianDoorBlock = new BlockSmartDoors(Material.rock, 3).setBlockUnbreakable().setResistance(6000000.0F).setBlockName(
 				"SmartObsidianDoor");
 		EmeraldPPBlock = new BlockSmartPressurePlates("emerald_block", Material.rock, EntityLiving.class, true)
-				.setHardness(5).setCreativeTab(CreativeTabs.tabDecorations).setBlockName("EmeraldPP");
-		RenforcedEmeraldPPBlock = new BlockSmartPressurePlates("redgear_securecraft:smartObsidianAnti", Material.rock,
-				EntityLiving.class, true).setBlockUnbreakable().setCreativeTab(CreativeTabs.tabDecorations)
-				.setBlockName("RenforcedEmeraldPP");
-		ChiselTool = new ItemGeneric("ObsidianChisel").setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName(
+				.setHardness(5).setCreativeTab(tab).setBlockName("EmeraldPP");
+		ReinforcedEmeraldPPBlock = new BlockSmartPressurePlates("redgear_securecraft:smartObsidianAnti", Material.rock,
+				EntityLiving.class, true).setBlockUnbreakable().setResistance(6000000.0F).setCreativeTab(tab)
+				.setBlockName("ReinforcedEmeraldPP");
+		
+		ReinforcedGlass = new BlockStrongGlass(Material.glass, "reinforcedGlass").setHardness(5.0F).setResistance(10.0F)
+				.setStepSound(Block.soundTypeGlass).setCreativeTab(tab).setBlockName("ReinforcedGlass");
+		ReinforcedObsidianGlass = new BlockStrongGlass(Material.glass, "reinforcedObsidianGlass").setHardness(50.0F)
+				.setResistance(2000.0F).setStepSound(Block.soundTypeGlass).setCreativeTab(tab).setBlockName("ReinforcedObsidianGlass");
+		SmartGlass = new BlockSmartObsidian(Material.glass, "smartGlass").setGlass().setBlockUnbreakable().setResistance(6000000.0F).setStepSound(Block.soundTypeGlass)
+				.setCreativeTab(tab).setBlockName("SmartGlass");
+		
+		ChiselTool = new ItemGeneric("ObsidianChisel").setCreativeTab(tab).setUnlocalizedName(
 				"ObsidianChisel");
-		AddedDoorItem = new ItemAddedDoor().setCreativeTab(CreativeTabs.tabDecorations).setUnlocalizedName(
-				"AddedDoorItem");
+		AddedDoorItem = new ItemAddedDoor().setCreativeTab(tab).setUnlocalizedName(
+				"AddedDoorItem"); 
 		
 		GameRegistry.registerBlock(ObsidianPPBlock, "ObsidianPPBlock");
 		GameRegistry.registerBlock(DiamondPPBlock, "DiamondPPBlock");
-		GameRegistry.registerBlock(RenforcedObsidianPPBlock, "RenforcedObsidianPPBlock");
+		GameRegistry.registerBlock(ReinforcedObsidianPPBlock, "ReinforcedObsidianPPBlock");
 		GameRegistry.registerBlock(SmartObsidianPPBLock, "SmartObsidianPPBLock");
 		GameRegistry.registerBlock(MossyPPBlock, "MossyPPBlock");
 		GameRegistry.registerBlock(BrickPPBlock, "BrickPPBlock");
 		GameRegistry.registerBlock(EmeraldPPBlock, "EmeraldPPBlock");
-		GameRegistry.registerBlock(RenforcedEmeraldPPBlock, "SmartObsidianAntiPPBlock");
+		GameRegistry.registerBlock(ReinforcedEmeraldPPBlock, "SmartObsidianAntiPPBlock");
+		
 		GameRegistry.registerBlock(DiamondDoorBlock, "DiamondDoorBlock");
 		GameRegistry.registerBlock(ObsidianDoorBlock, "ObsidianDoorBlock");
-		GameRegistry.registerBlock(RenforcedObsidianDoorBlock, "RenforcedObsidianDoorBlock");
+		GameRegistry.registerBlock(ReinforcedObsidianDoorBlock, "ReinforcedObsidianDoorBlock");
 		GameRegistry.registerBlock(SmartObsidianDoorBlock, "SmartObsidianDoorBlock");
 
 		GameRegistry.registerItem(AddedDoorItem, "AddedDoorItem");
 
-		GameRegistry.addShapedRecipe(new ItemStack(RenforcedObsidian, 4, 0), new Object[] {"OIO", "III", "OIO", 'O',
+		GameRegistry.addShapedRecipe(new ItemStack(ReinforcedObsidian, 4, 0), new Object[] {"OIO", "III", "OIO", 'O',
 				Blocks.obsidian, 'I', Items.iron_ingot });
 		GameRegistry.addShapedRecipe(new ItemStack(SmartObsidian, 8, 0), new Object[] {"OOO", "ODO", "OOO", 'O',
-				RenforcedObsidian, 'D', Items.diamond });
+				ReinforcedObsidian, 'D', Items.diamond });
 		GameRegistry.addShapedRecipe(new ItemStack(ChiselTool, 1, 0), new Object[] {"R", "S", "S", 'R',
-				RenforcedObsidian, 'S', Items.stick });
-		GameRegistry.addShapedRecipe(new ItemStack(RenforcedObsidianPPBlock, 1, 0), new Object[] {"XX", 'X',
-				RenforcedObsidian });
+				ReinforcedObsidian, 'S', Items.stick });
+		GameRegistry.addShapedRecipe(new ItemStack(ReinforcedObsidianPPBlock, 1, 0), new Object[] {"XX", 'X',
+				ReinforcedObsidian });
 		GameRegistry.addShapedRecipe(new ItemStack(SmartObsidianPPBLock, 1, 0),
 				new Object[] {"XX", 'X', SmartObsidian });
 		GameRegistry.addShapedRecipe(new ItemStack(ObsidianPPBlock, 1, 0), new Object[] {"XX", 'X', Blocks.obsidian });
@@ -116,16 +138,25 @@ public class Securecraft extends ModUtils {
 				Blocks.mossy_cobblestone });
 		GameRegistry.addShapedRecipe(new ItemStack(BrickPPBlock, 1, 0), new Object[] {"XX", 'X', Blocks.brick_block });
 		GameRegistry.addShapedRecipe(new ItemStack(EmeraldPPBlock, 1, 0), new Object[] {"XX", 'X', Items.emerald });
-		GameRegistry.addShapedRecipe(new ItemStack(RenforcedEmeraldPPBlock, 1, 0), new Object[] {"XXX", "XPX", "XXX",
-				'X', RenforcedObsidian, 'P', EmeraldPPBlock });
+		GameRegistry.addShapedRecipe(new ItemStack(ReinforcedEmeraldPPBlock, 1, 0), new Object[] {"XXX", "XPX", "XXX",
+				'X', ReinforcedObsidian, 'P', EmeraldPPBlock });
+		
+		
+		GameRegistry.addShapedRecipe(new ItemStack(ReinforcedGlass, 4, 0), new Object[] {"OIO", "III", "OIO", 'O', Blocks.glass, 'I', Items.iron_ingot });
+		GameRegistry.addShapedRecipe(new ItemStack(ReinforcedObsidianGlass, 4, 0), new Object[] {"OIO", "III", "OIO", 'O', Blocks.glass, 'I', Blocks.obsidian });
+		GameRegistry.addShapedRecipe(new ItemStack(SmartGlass, 8, 0), new Object[] {"OOO", "ODO", "OOO", 'O', ReinforcedObsidianGlass, 'D', Items.diamond });
+		
+		
 		GameRegistry.addShapedRecipe(new ItemStack(AddedDoorItem, 1, 0), new Object[] {"XX", "XX", "XX", 'X',
 				Items.diamond });
 		GameRegistry.addShapedRecipe(new ItemStack(AddedDoorItem, 1, 1), new Object[] {"XX", "XX", "XX", 'X',
 				Blocks.obsidian });
 		GameRegistry.addShapedRecipe(new ItemStack(AddedDoorItem, 1, 2), new Object[] {"XX", "XX", "XX", 'X',
-				RenforcedObsidian });
+				ReinforcedObsidian });
 		GameRegistry.addShapedRecipe(new ItemStack(AddedDoorItem, 1, 3), new Object[] {"XX", "XX", "XX", 'X',
 				SmartObsidian });
+		
+		
 	}
 
 	@Override

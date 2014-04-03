@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockAddedDoors extends BlockDoor {
 	private static final String[][] doorIconNames = new String[][] { {"doorDiamond_lower", "doorDiamond_upper" },
 			{"doorObsidian_lower", "doorObsidian_upper" },
-			{"doorRenforcedObsidian_lower", "doorRenforcedObsidian_upper" },
+			{"doorReinforcedObsidian_lower", "doorReinforcedObsidian_upper" },
 			{"doorSmartObsidian_lower", "doorSmartObsidian_upper" } };
 	private static IIcon[][] doorIcons = new IIcon[4][4];
 

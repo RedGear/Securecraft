@@ -5,18 +5,17 @@ import java.util.List;
 
 import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import redgear.core.tile.TileEntitySmart;
 
 public class BlockAddedPressurePlates extends BlockPressurePlate {
-	protected Class acceptableEntityClass;
+	protected Class<?> acceptableEntityClass;
 	private final boolean isSmart;
 	private final boolean isAnti;
 
-	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass, boolean isSmart,
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class<?> creatureClass, boolean isSmart,
 			boolean isAnti) {
 		super(par2Str, par3Material,  Sensitivity.mobs);
 		acceptableEntityClass = creatureClass;
@@ -24,11 +23,11 @@ public class BlockAddedPressurePlates extends BlockPressurePlate {
 		this.isAnti = isAnti;
 	}
 
-	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass, boolean isSmart) {
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class<?> creatureClass, boolean isSmart) {
 		this(par2Str, par3Material, creatureClass, false, false);
 	}
 
-	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class creatureClass) {
+	public BlockAddedPressurePlates(String par2Str, Material par3Material, Class<?> creatureClass) {
 		this(par2Str, par3Material, creatureClass, false);
 	}
 
@@ -47,12 +46,13 @@ public class BlockAddedPressurePlates extends BlockPressurePlate {
 	 * 0 and 15 based on the number of items on
 	 * it.
 	 */
-	protected int getPlateState(World world, int x, int y, int z) {
-		List list = null;
-		list = world.getEntitiesWithinAABB(EntityLivingBase.class, this.getCollisionBoundingBoxFromPool(world, x, y, z));
+	@Override
+	//getPlateState
+	protected int func_150065_e(World world, int x, int y, int z) {
+		List<?> list = world.getEntitiesWithinAABB(EntityLivingBase.class, this.func_150061_a(x, y, z));
 
 		if (!list.isEmpty()) {
-			Iterator iterator = list.iterator();
+			Iterator<?> iterator = list.iterator();
 
 			while (iterator.hasNext()) {
 				EntityLivingBase entity = (EntityLivingBase) iterator.next();

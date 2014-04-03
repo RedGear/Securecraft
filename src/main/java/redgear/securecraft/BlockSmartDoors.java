@@ -3,12 +3,15 @@ package redgear.securecraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import redgear.core.tile.TileEntitySmart;
 import redgear.core.util.ItemStackUtil;
+import redgear.core.world.WorldLocation;
 
 public class BlockSmartDoors extends BlockAddedDoors implements ITileEntityProvider {
 	public BlockSmartDoors(Material par2Material, int doorIndex) {
@@ -58,7 +61,7 @@ public class BlockSmartDoors extends BlockAddedDoors implements ITileEntityProvi
 		}
 	}
 
-	protected void toggleDoor(World world, int x, int y, int z) {
+	/*protected void toggleDoor(World world, int x, int y, int z, boolean active) {
 		int i1 = getFullMetadata(world, x, y, z);
 		int j1 = i1 & 7;
 		j1 ^= 4;
@@ -72,52 +75,50 @@ public class BlockSmartDoors extends BlockAddedDoors implements ITileEntityProvi
 		}
 
 		world.playAuxSFXAtEntity((EntityPlayer) null, 1003, x, y, z, 0);
-	}
-
-	private int isSmartPlateNearby(World world, int x, int y, int z) {
-		final int Map[][] = { {0, 1, 0, -1 }, {1, 0, -1, 0 } };
-
-		for (int i = 0; i < 4; i++) {
-			Block block = world.getBlock(x + Map[0][i], y + Map[1][i], z);
-			if (block == Securecraft.DiamondPPBlock || block == Securecraft.SmartObsidianPPBLock)
-				if (((TileEntitySmart) world.getTileEntity(x, y, z)).ownerName.equals(world.getTileEntity(
-						x + Map[0][i], y + Map[1][i], z)))
-					return world.getBlockMetadata(x + Map[0][i], y + Map[1][i], z);
+	}*/
+	
+	 /**
+     * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
+     * their own) Args: x, y, z, neighbor Block
+     */
+	@Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block other){
+		if(other instanceof BlockSmartDoors){
+			super.onNeighborBlockChange(world, x, y, z, other);
 		}
-		return -1;
-	}
-
+		
+    	if(other instanceof BlockSmartPressurePlates){
+    		WorldLocation here = new WorldLocation(x, y, z, world);
+    		WorldLocation there;
+    		
+    		for(int i = 2; i < 6; i++){
+    			there = here.translate(i, 1);
+    			
+    			if(there.getBlock() instanceof BlockSmartPressurePlates){
+    				TileEntitySmart otherTile = (TileEntitySmart)there.getTile();
+    				String otherOwner = otherTile.ownerName;
+    				if(this.getOwner(world, x, y, z).equals(otherOwner)){
+    					super.onNeighborBlockChange(world, x, y, z, other);
+    					return;
+    				}
+    			}
+    			
+    			
+    		}
+    	}
+    }
+	
 	/**
-	 * A function to open a door.
-	 */
-	@Override//onPoweredBlockChange
-	public void func_150014_a(World par1World, int par2, int par3, int par4, boolean par5) {
-		/*
-		 * int l = this.getFullMetadata(par1World, par2, par3, par4);
-		 * boolean flag1 = (l & 4) != 0;
-		 * int plateState = isSmartPlateNearby(par1World, par2, par3, par4);
-		 * 
-		 * if (flag1 != par5 && plateState > -1)
-		 * {
-		 * int i1 = l & 7;
-		 * i1 ^= 4;
-		 * 
-		 * if ((l & 8) == 0)
-		 * {
-		 * par1World.setBlockMetadataWithNotify(par2, par3, par4, i1, 2);
-		 * par1World.markBlockRangeForRenderUpdate(par2, par3, par4, par2, par3,
-		 * par4);
-		 * }
-		 * else
-		 * {
-		 * par1World.setBlockMetadataWithNotify(par2, par3 - 1, par4, i1, 2);
-		 * par1World.markBlockRangeForRenderUpdate(par2, par3 - 1, par4, par2,
-		 * par3, par4);
-		 * }
-		 * 
-		 * par1World.playAuxSFXAtEntity((EntityPlayer)null, 1003, par2, par3,
-		 * par4, 0);
-		 * }
-		 */
-	}
+     * Determines if this block is can be destroyed by the specified entities normal behavior.
+     *
+     * @param world The current world
+     * @param x X Position
+     * @param y Y Position
+     * @param z Z position
+     * @return True to allow the ender dragon to destroy this block
+     */
+	@Override
+    public boolean canEntityDestroy(IBlockAccess world, int x, int y, int z, Entity entity){
+        return false;
+    }
 }
