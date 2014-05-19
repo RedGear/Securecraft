@@ -4,10 +4,6 @@ minecraft {
 	version = rootProject.ext.mcversion
 }
 
-jar{
-	destinationDir rootProject.libsDir
-}
-
 dependencies {
 	compile rootProject
 	compile rootProject.sourceSets.main.output
@@ -26,10 +22,18 @@ group= config.mod_group // http://maven.apache.org/guides/mini/guide-naming-conv
 archivesBaseName = config.mod_name
 
 minecraft{
-		assetDir = "eclipse/assets"
+		assetDir = "run/assets"
 
-		replaceIn config.mod_main + '.java'
 		replace "@ModVersion@", project.version
+}
+
+jar{
+	destinationDir rootProject.libsDir
+	
+	manifest {
+		attributes 'FMLCorePlugin': 'codechicken.core.launch.DepLoader'
+		attributes 'FMLCorePluginContainsFMLMod': 'true'
+	}
 }
 
 processResources
