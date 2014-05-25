@@ -1,0 +1,17 @@
+[
+{
+  "modid": "redgear_securecraft",
+  "name": "Securecraft",
+  "description": "Protect yourself and more!",
+  "version": "${version}",
+  "credits": "Created by Team Red Gear",
+  "logoFile": "",
+  "mcversion": "${minecraft_version}",
+  "url": "http://curse.com/project/59955",
+  "updateUrl": "",
+  "authors": [ "LordBlackHole"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": ["redgear_core"]
+}
+]
